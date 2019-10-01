@@ -1,8 +1,4 @@
 require_relative '../config/environment'
-# require_relative "../app/models/player.rb"
-# require_relative "../app/models/team.rb"
-# require_relative "../app/models/user_team.rb"
-# require_relative "../app/models/user.rb"
 
 def user_login
     puts "First time here? (Yes/No). Type exit to exit app"
@@ -12,6 +8,7 @@ def user_login
     if first_time == "yes" 
         #we will look for the user in the db 
         #Call create new user method
+        puts ""
         puts "Lets have you create a new username."
         find_or_create_user
     elsif first_time == "no"
@@ -31,7 +28,7 @@ def find_or_create_user
     #will create or find the user in the DB and return the object
     puts "Enter your username"
     input_username = gets.chomp
-
+ 
     if input_username.downcase == "exit"
         puts "Goodbye!"
     else 
@@ -39,9 +36,29 @@ def find_or_create_user
 
         puts "-----------------------------"
         puts "Welcome #{new_user.name}"
+        puts "-----------------------------"
+        puts ""
         return new_user 
     end
 end
 
+
+# Menu of Commands:
+# List Teams (display all teams in the user_team table for that specific user)
+
+# Add  Team(user would enter team name and we would look for team name in the team table and create a new “user_team”)
+
+# Delete Team (list all your teams and the user would type the team name and we would look in the joiner table to delete it)
+
+def show_menu
+    puts ""
+    puts "--------------- Menu of Commands ---------------------"
+    puts "List Teams - will display all of your teams."
+    puts "Add Team - will add a team to your favorites."
+    puts "Delete Team - will delete a team from your favorites."
+    puts "Exit - will exit the application"
+    puts "------------------------------------------------------"
+    puts ""
+end
 
 

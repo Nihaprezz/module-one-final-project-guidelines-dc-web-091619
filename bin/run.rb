@@ -5,12 +5,17 @@ require_relative "../app/models/user_team.rb"
 require_relative "../app/models/user.rb"
 require_relative "./cli_methods.rb"
 
-
+puts ""
 puts "Welcome to Sports CLI App"
 puts "-------------------------"
 puts "Once logged in type Menu for a list of commands"
 puts "-------------------------"
+puts ""
 
 current_user = user_login
+
+if current_user
+    
+end
 
 
