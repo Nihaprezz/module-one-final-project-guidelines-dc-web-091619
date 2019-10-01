@@ -13,11 +13,10 @@ class User < ActiveRecord::Base
     def list_favorite_teams
         fav_team = User_team.where(user_id:self.id)
         fav_team = fav_team.map do |team|
-            Team.find_by(id:team.team_id).name
+            Team.find_by(id:team.team_id)
         end
-        fav_team.each_with_index{|team,index|puts "#{index+1}. #{team}"}
-        #puts the team names as listed but returns the team names in an array
-        # puts "-----------"
+        fav_team
+        #returns the team instances in an array.
     end
     
 end
