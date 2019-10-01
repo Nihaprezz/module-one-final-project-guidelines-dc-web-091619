@@ -14,25 +14,25 @@ Team.destroy_all
 
 
 ##Users
-user1=User.create(name:Faker::Name.name)
-user2=User.create(name:Faker::Name.name)
-user3=User.create(name:Faker::Name.name)
-user4=User.create(name:Faker::Name.name)
-user5=User.create(name:Faker::Name.name)
-user6=User.create(name:Faker::Name.name)
-user7=User.create(name:Faker::Name.name)
-user8=User.create(name:Faker::Name.name)
+# user1=User.create(name:Faker::Name.name)
+# user2=User.create(name:Faker::Name.name)
+# user3=User.create(name:Faker::Name.name)
+# user4=User.create(name:Faker::Name.name)
+# user5=User.create(name:Faker::Name.name)
+# user6=User.create(name:Faker::Name.name)
+# user7=User.create(name:Faker::Name.name)
+# user8=User.create(name:Faker::Name.name)
 
 
 ##User_teams
-user_team1=User_team.create()
-user_team2=User_team.create()
-user_team3=User_team.create()
-user_team4=User_team.create()
-user_team5=User_team.create()
-user_team6=User_team.create()
-user_team7=User_team.create()
-user_team8=User_team.create()
+# user_team1=User_team.create()
+# user_team2=User_team.create()
+# user_team3=User_team.create()
+# user_team4=User_team.create()
+# user_team5=User_team.create()
+# user_team6=User_team.create()
+# user_team7=User_team.create()
+# user_team8=User_team.create()
 
 ##teams
 team1=Team.create(name:Faker::Sports::Football.team)
@@ -43,7 +43,7 @@ team5=Team.create(name:Faker::Sports::Football.team)
 team6=Team.create(name:Faker::Sports::Football.team)
 team7=Team.create(name:Faker::Sports::Football.team)
 team8=Team.create(name:Faker::Sports::Football.team)
-g
+
 ##players
  player1=Player.create(name:Faker::Sports::Football.player, team_id:team1.id)
  player2=Player.create(name:Faker::Sports::Football.player, team_id:team2.id) 
