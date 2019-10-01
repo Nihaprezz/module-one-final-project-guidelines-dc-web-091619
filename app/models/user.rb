@@ -4,8 +4,6 @@ class User < ActiveRecord::Base
     has_many :user_teams
     has_many :teams, through: :user_teams
 
-    
-
     def add_team(team)
         User_team.create(user_id:self.id,team_id:team)
     end
@@ -17,6 +15,15 @@ class User < ActiveRecord::Base
         end
         fav_team
         #returns the team instances in an array.
+    end
+
+    def print_fav_teams
+        list_favorite_teams.each_with_index{ |value, index| puts "#{index+1}. #{value.name}"}
+    end
+
+
+    def delete_team
+
     end
     
 end

@@ -69,13 +69,22 @@ def menu_option_picked(input)
     #case thing
     case input
     when "list teams"
-        @current_user.list_favorite_teams
+        @current_user.print_fav_teams
     when "add team"
-        ##add teams method
+        new_team_id = add_team_interface
+        @current_user.add_team(new_team_id)
     when "delete team"
         ##call delete team methods
+        @current_user.list_favorite_teams
+        puts "Choose a team to delete?"  
+        #call the delete method      
     when "exit"
         #will return goodbye message"
     end
 end
 
+def add_team_interface
+    puts "Please enter a team"
+    team_search = gets.chomp.capitalize #gets turns variable into string
+    Team.find_team(team_search) #passing in team_search which is a string variable
+end
