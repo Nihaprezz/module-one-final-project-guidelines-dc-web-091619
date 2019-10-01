@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
 
 
 
-    def add_team
-        User_team.create(user_id:self.id,team_id:team.id)
+    def add_team(team)
+        User_team.create(user_id:self.id,team_id:team)
     end
 
 

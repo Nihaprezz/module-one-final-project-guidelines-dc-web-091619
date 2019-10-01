@@ -51,3 +51,4 @@ user_team8= User_team.create(user_id: user1.id, team_id: team2.id)
  player6=Player.create(name:Faker::Sports::Football.player, team_id:team6.id) 
  player7=Player.create(name:Faker::Sports::Football.player, team_id:team7.id)
  player8=Player.create(name:Faker::Sports::Football.player, team_id:team8.id)
+
