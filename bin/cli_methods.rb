@@ -19,8 +19,10 @@ def user_login
     else 
         puts "Wrong Input Entered! Only accepts Yes or No"
         user_login
+        
     end
 end
+
 
 
 #Create new User method
@@ -38,6 +40,8 @@ def find_or_create_user
         puts "Welcome #{new_user.name}"
         puts "-----------------------------"
         puts ""
+        @current_user = new_user
+        #this saves the user instance for method calls.
         return new_user 
     end
 end
@@ -53,12 +57,25 @@ end
 def show_menu
     puts ""
     puts "--------------- Menu of Commands ---------------------"
-    puts "List Teams - will display all of your teams."
-    puts "Add Team - will add a team to your favorites."
-    puts "Delete Team - will delete a team from your favorites."
-    puts "Exit - will exit the application"
+    puts "LIST TEAMS - will display all of your teams."
+    puts "ADD TEAM - will add a team to your favorites."
+    puts "DELETE TEAM - will delete a team from your favorites."
+    puts "EXIT - will exit the application"
     puts "------------------------------------------------------"
     puts ""
 end
 
+def menu_option_picked(input)
+    #case thing
+    case input
+    when "list teams"
+        @current_user.list_favorite_teams
+    when "add team"
+        ##add teams method
+    when "delete team"
+        ##call delete team methods
+    when "exit"
+        #will return goodbye message"
+    end
+end
 
