@@ -34,9 +34,6 @@ GEM
     rack (2.0.7)
     rack-protection (2.0.7)
       rack
-<<<<<<< HEAD
-    require_all (2.0.0)
-=======
     rake (13.0.0)
     require_all (2.0.0)
     rspec (3.8.0)
@@ -52,7 +49,6 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.2)
->>>>>>> sergio
     sinatra (2.0.7)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -74,13 +70,9 @@ PLATFORMS
 DEPENDENCIES
   faker!
   pry
-<<<<<<< HEAD
-  require_all
-=======
   rake
   require_all
   rspec
->>>>>>> sergio
   sinatra-activerecord
   sqlite3
 
