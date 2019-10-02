@@ -2,6 +2,7 @@ require "pry"
 require "json"
 require "rest_client"
 
+
 def get_api_info
     response_string=RestClient.get("https://api.football-data.org/v2/competitions/2021/teams", {"X-Auth-Token"=> ""})
     response_hash=JSON.parse(response_string)
@@ -25,6 +26,6 @@ end
 
 ALL_TEAMS = all_teams_hashes
 
-binding.pry
+
 
 
