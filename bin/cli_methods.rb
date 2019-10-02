@@ -27,6 +27,7 @@ end
 
 #Create new User method
 def find_or_create_user
+    system "clear"
     #will create or find the user in the DB and return the object
     puts "Enter your username"
     input_username = gets.chomp
@@ -65,31 +66,34 @@ def show_menu
     puts ""
 end
 
-def menu_option_picked(input)
-    #case thing
-    case input
-    when "list teams"
-        @current_user.print_fav_teams
-    when "add team"
-        new_team_id = add_team_interface
-        @current_user.add_team(new_team_id)
-    when "delete team"
-        ##call delete team method
-        puts ''
-        @current_user.print_fav_teams
-        puts ''
-        puts "Choose a team to delete."
-        team_to_delete = gets.chomp  
-        #call the delete method     
+# def menu_option_picked(input)
+#     #case thing
+#     case input
+#     when "list teams"
+#         @current_user.print_fav_teams
+#     when "add team"
+#         new_team_id = add_team_interface
+#         @current_user.add_team(new_team_id)
+#     when "delete team"
+#         ##call delete team method
+#         puts ''
+#         @current_user.print_fav_teams
+#         puts ''
+#         puts "Choose a team to delete."
+#         team_to_delete = gets.chomp  
+#         #call the delete method     
 
-        @current_user.delete_team(team_to_delete)
-    when "exit"
-        #will return goodbye message"
-    end
-end
+#         @current_user.delete_team(team_to_delete)
+#     when "exit"
+#         #will return goodbye message"
+#     end
+# end
 
 def add_team_interface
     puts "Please enter a team"
     team_search = gets.chomp.capitalize #gets turns variable into string
+    #deleted downcase to match the team names in TEAM SEARCH. Running into errors with captialization.
     Team.find_team(team_search) #passing in team_search which is a string variable
 end
+
+
