@@ -35,10 +35,11 @@ def create_user
         puts "Goodbye!"
     elsif 
         user = User.create(name: input_username)
-
+        system "clear"
         puts "-----------------------------"
         puts "Welcome #{user.name}"
         puts "-----------------------------"
+        show_menu
         puts ""
         @current_user = user
         #this saves the user instance for method calls.
@@ -58,10 +59,11 @@ def find_user
         puts "Goodbye!"
     elsif 
         user = User.find_by(name: input_username)
-
+        system "clear"
         puts "-----------------------------"
         puts "Welcome back #{user.name}!"
         puts "-----------------------------"
+        show_menu
         puts ""
         @current_user = user
         #this saves the user instance for method calls.
@@ -69,6 +71,7 @@ def find_user
     else 
         puts "User not found, please try again."
         find_user
+        #recursion function
     end
 end
 
@@ -84,6 +87,7 @@ end
 def show_menu
     puts ""
     puts "--------------- Menu of Commands ---------------------"
+    puts "MENU - will display a list of commands."
     puts "LIST TEAMS - will display all of your teams."
     puts "ADD TEAM - will add a team to your favorites."
     puts "DELETE TEAM - will delete a team from your favorites."
