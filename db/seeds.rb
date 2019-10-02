@@ -35,10 +35,10 @@ team8=Team.create(name:Faker::Sports::Football.team)
 user_team1= User_team.create(user_id: user1.id, team_id: team1.id)
 user_team2= User_team.create(user_id: user2.id, team_id: team2.id)
 user_team3= User_team.create(user_id: user3.id, team_id: team3.id)
-user_team4= User_team.create(user_id: user4.id, team_id: team4.id)
-user_team5= User_team.create(user_id: user5.id, team_id: team4.id)
+user_team4= User_team.create(user_id: user1.id, team_id: team4.id)
+user_team5= User_team.create(user_id: user5.id, team_id: team8.id)
 user_team6= User_team.create(user_id: user6.id, team_id: team5.id)
-user_team7= User_team.create(user_id: user1.id, team_id: team1.id)
+user_team7= User_team.create(user_id: user1.id, team_id: team8.id)
 user_team8= User_team.create(user_id: user1.id, team_id: team2.id)
 
 
