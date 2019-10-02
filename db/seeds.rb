@@ -20,7 +20,7 @@ user6=User.create(name:Faker::Name.name)
 user7=User.create(name:Faker::Name.name)
 user8=User.create(name:Faker::Name.name)
 
-#Teams
+# Teams
 team1=Team.create(name:Faker::Sports::Football.team)
 team2=Team.create(name:Faker::Sports::Football.team)
 team3=Team.create(name:Faker::Sports::Football.team)

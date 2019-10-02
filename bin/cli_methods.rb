@@ -48,13 +48,6 @@ def find_or_create_user
 end
 
 
-# Menu of Commands:
-# List Teams (display all teams in the user_team table for that specific user)
-
-# Add  Team(user would enter team name and we would look for team name in the team table and create a new “user_team”)
-
-# Delete Team (list all your teams and the user would type the team name and we would look in the joiner table to delete it)
-
 def show_menu
     puts ""
     puts "--------------- Menu of Commands ---------------------"
@@ -66,28 +59,6 @@ def show_menu
     puts ""
 end
 
-# def menu_option_picked(input)
-#     #case thing
-#     case input
-#     when "list teams"
-#         @current_user.print_fav_teams
-#     when "add team"
-#         new_team_id = add_team_interface
-#         @current_user.add_team(new_team_id)
-#     when "delete team"
-#         ##call delete team method
-#         puts ''
-#         @current_user.print_fav_teams
-#         puts ''
-#         puts "Choose a team to delete."
-#         team_to_delete = gets.chomp  
-#         #call the delete method     
-
-#         @current_user.delete_team(team_to_delete)
-#     when "exit"
-#         #will return goodbye message"
-#     end
-# end
 
 def add_team_interface
     puts "Please enter a team"
