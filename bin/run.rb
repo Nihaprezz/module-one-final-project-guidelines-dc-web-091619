@@ -45,7 +45,7 @@ if current_user
         choice = gets.chomp.downcase
             case choice
             when "menu"
-                show_menu
+    show_menu
             when "list teams"
                 @current_user.print_fav_teams
             when "add team"
@@ -63,7 +63,7 @@ if current_user
             when "exit"
                 puts "Goodbye!"
                 break
-            end
-     
+end
+
     end
 end
