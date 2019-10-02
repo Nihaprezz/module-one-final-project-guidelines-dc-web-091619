@@ -27,6 +27,7 @@ end
 
 #Create new User method
 def find_or_create_user
+    system "clear"
     #will create or find the user in the DB and return the object
     puts "Enter your username"
     input_username = gets.chomp
