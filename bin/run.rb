@@ -38,14 +38,14 @@ current_user = user_login
 # end
 
 
-if current_user
+if @current_user
     while true do
         # show_menu
         puts "What would you like to do?"
         choice = gets.chomp.downcase
             case choice
             when "menu"
-    show_menu
+            show_menu
             when "list teams"
                 @current_user.print_fav_teams
             when "add team"

@@ -10,10 +10,10 @@ def user_login
         #Call create new user method
         puts ""
         puts "Lets have you create a new username."
-        find_or_create_user
+        create_user
     elsif first_time == "no"
         #we will create a new user object in the user table
-        find_or_create_user
+        find_user
     elsif first_time == "exit"
         puts "Goodbye!"
     else 
@@ -26,26 +26,52 @@ end
 
 
 #Create new User method
-def find_or_create_user
-    system "clear"
+def create_user
     #will create or find the user in the DB and return the object
     puts "Enter your username"
     input_username = gets.chomp
  
     if input_username.downcase == "exit"
         puts "Goodbye!"
-    else 
-        new_user = User.find_or_create_by(name: input_username)
+    elsif 
+        user = User.create(name: input_username)
 
         puts "-----------------------------"
-        puts "Welcome #{new_user.name}"
+        puts "Welcome #{user.name}"
         puts "-----------------------------"
         puts ""
-        @current_user = new_user
+        @current_user = user
         #this saves the user instance for method calls.
-        return new_user 
+        return user 
+    else
+        create_user
     end
 end
+
+#Find returning User method
+def find_user
+    #will create or find the user in the DB and return the object
+    puts "Enter your username"
+    input_username = gets.chomp
+ 
+    if input_username.downcase == "exit"
+        puts "Goodbye!"
+    elsif 
+        user = User.find_by(name: input_username)
+
+        puts "-----------------------------"
+        puts "Welcome back #{user.name}!"
+        puts "-----------------------------"
+        puts ""
+        @current_user = user
+        #this saves the user instance for method calls.
+        return user
+    else 
+        puts "User not found, please try again."
+        find_user
+    end
+end
+
 
 
 # Menu of Commands:
