@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
     has_many :teams, through: :user_teams
 
     def add_team(team)
-        User_team.create(user_id:self.id,team_id:team)
+        User_team.find_or_create_by(user_id:self.id,team_id:team)
+        puts "Favorites changed"
     end
 
     def list_favorite_teams
