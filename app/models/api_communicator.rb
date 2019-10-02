@@ -5,6 +5,12 @@ require "./config/environment.rb"
 
 $Total_arr = []
 
+# def get_api_info
+#     response_string=RestClient.get("https://api.football-data.org/v2/competitions/2021/teams", {"X-Auth-Token"=> ""})
+#     response_hash=JSON.parse(response_string)
+#     # binding.pry
+# end
+
 
 
 def all_teams_hashes #only gets teams for 4 leagues

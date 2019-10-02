@@ -38,16 +38,24 @@ current_user = user_login
 # end
 
 
-if current_user
+if @current_user
     while true do
         # show_menu
-        puts "What would you like to do?"
+        puts "What would you like to do? (Type MENU for options)"
         choice = gets.chomp.downcase
             case choice
             when "menu"
-    show_menu
+                system "clear"
+                show_menu
             when "list teams"
+                system "clear"
+                puts ''
+                puts "Favorite Teams"
+                puts "---------------"
                 @current_user.print_fav_teams
+                puts ''
+                puts ''
+                puts ''
             when "add team"
                 new_team_id = add_team_interface
                 @current_user.add_team(new_team_id)
