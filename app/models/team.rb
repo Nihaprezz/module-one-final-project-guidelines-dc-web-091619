@@ -16,5 +16,16 @@ class Team < ActiveRecord::Base
         list
     end
 
+    def matches
+        week_behind=(Date.today-7).strftime('%Y-%m-%d')
+        week_forward=(Date.today+7).strftime('%Y-%m-%d')
+        match_string=RestClient.get("https://api.football-data.org/v2/teams/1044/matches?dateFrom=#{week_behind}&dateTo=#{week_forward}", {"X-Auth-Token"=> "######TOP SECRET#########"})
+        match_hash=JSON.parse(match_string)
+        @match_array = match_hash["matches"]
+    end
+
+    # def stats
+
+    # end
     
 end
