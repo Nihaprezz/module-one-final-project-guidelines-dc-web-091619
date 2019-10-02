@@ -5,8 +5,8 @@ class Team < ActiveRecord::Base
     has_many :users, through: :user_teams
 
     def self.find_team(team_name)
-        team = self.find_by(name: team_name)
-        team.id 
+        found_team = self.find_by(name: team_name)
+        found_team.id 
     end
 
     def list_players

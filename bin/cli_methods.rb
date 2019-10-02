@@ -90,6 +90,8 @@ end
 
 def add_team_interface
     puts "Please enter a team"
-    team_search = gets.chomp.capitalize #gets turns variable into string
+    team_search = gets.chomp #gets turns variable into string
     Team.find_team(team_search) #passing in team_search which is a string variable
 end
+
+
