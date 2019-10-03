@@ -36,7 +36,7 @@ class Team < ActiveRecord::Base
                 puts ""
                 puts "Upcoming Fixtures"
                 puts "-----------------"
-                # puts "#{match["utcDate"]}"
+                # puts "#{match["utcDate"].sfrt()}"
                 #This doesnt work.
                 puts "#{match["homeTeam"]["name"]}"
                 puts "#{match["awayTeam"]["name"]}"
