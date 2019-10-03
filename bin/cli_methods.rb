@@ -6,7 +6,7 @@ def user_login
     
 
     if first_time == "yes" 
-        #we will look for the user in the db 
+        #we will look for the user in the db s
         #Call create new user method
         puts ""
         puts "Lets have you create a new username."
