@@ -21,23 +21,6 @@ puts "Once logged in type Menu for a list of commands"
 
 current_user = user_login
 
-# if current_user
-#     show_menu
-#     puts "What would you like to do?"
-#     what_to_do = gets.chomp.downcase
-#     menu_option_picked(what_to_do)
-# end
-
-
-
-# if current_user
-#     show_menu
-#     puts "What would you like to do?"
-#     what_to_do = gets.chomp.downcase
-#     menu_option_picked(what_to_do)
-# end
-
-
 if @current_user
     while true do
         # show_menu
@@ -71,7 +54,7 @@ if @current_user
             when "exit"
                 puts "Goodbye!"
                 break
-end
+            end
 
     end
 end

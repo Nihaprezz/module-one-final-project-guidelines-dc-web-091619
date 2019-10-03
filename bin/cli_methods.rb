@@ -30,9 +30,16 @@ def create_user
     #will create or find the user in the DB and return the object
     puts "Enter your username"
     input_username = gets.chomp
- 
-    if input_username.downcase == "exit"
+    if input_username.downcase == "back"
+        user_login
+    elsif User.find_by(name:input_username)
+        puts "Name taken. Please try again. (Input BACK to go back)"
+        puts ""
+        create_user
+    elsif input_username.downcase == "exit"
         puts "Goodbye!"
+    #need to search for username
+        #if username taken, prompt taken make a new one
     elsif 
         user = User.create(name: input_username)
         system "clear"
@@ -52,7 +59,7 @@ end
 #Find returning User method
 def find_user
     #will create or find the user in the DB and return the object
-    puts "Enter your username"
+    puts "Enter your username:"
     input_username = gets.chomp
  
     if input_username.downcase == "exit"
@@ -68,8 +75,12 @@ def find_user
         @current_user = user
         #this saves the user instance for method calls.
         return user
+    elsif input_username.downcase == "back"
+        system "clear"
+        user_login
     else 
-        puts "User not found, please try again."
+        puts "User not found, please try again. (Input BACK to go back)"
+        puts ""
         find_user
         #recursion function
     end
