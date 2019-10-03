@@ -7,12 +7,15 @@ class Team < ActiveRecord::Base
     def self.find_team(team_name)
             # found_team = self.find_by(name: team_name)
             if found_team=self.all.select{|team|team.name.casecmp(team_name)==0}.first
-                found_team.id 
-            else
+                found_team.id
+            elsif team_name == "exit"
+                return
+            elsif found_team != self.all.select{|team|team.name.casecmp(team_name)==0}.first
                 puts "Team not found.  Please enter again"
-                input = gets.chomp
-                self.find_team(input)
+                team_name = gets.chomp.downcase
+                self.find_team(team_name)
             end
+
     end
 
     def matches
