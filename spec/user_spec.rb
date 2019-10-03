@@ -5,11 +5,10 @@ require_relative "../app/models/user_team.rb"
 require_relative "../app/models/user.rb"
 require_relative "../bin/cli_methods.rb"
 
-RSpec.describe "Team" do
+RSpec.describe "User" do
 
-    it "returns 108 if team_name is ARSENAL FC" do
-        expect(Team.find_team("ARSENAL FC")).to be(108)
+    it "returns an array for User.find_by(name:'Sergio')" do
+        expect(User.find_by(name:"Sergio").list_favorite_teams).to eq(expected_array)
     end
 
 end
-
