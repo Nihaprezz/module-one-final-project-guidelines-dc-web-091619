@@ -29,7 +29,6 @@ class Team < ActiveRecord::Base
                 puts "----------"
                 puts "#{match["homeTeam"]["name"]}: #{match["score"]["fullTime"]["homeTeam"]}"
                 puts "#{match["awayTeam"]["name"]}: #{match["score"]["fullTime"]["awayTeam"]}"
-                binding.pry
             elsif match["status"] == "SCHEDULED"
                 puts ""
                 puts ""
@@ -43,10 +42,18 @@ class Team < ActiveRecord::Base
             end
         end
     end
-    binding.pry 
 
-    # def stats
-
-    # end
+    def players
+        players_string=RestClient.get("https://api.football-data.org/v2/teams/#{self.team_api_id}", {"X-Auth-Token"=> "ebf9f744f51940048af126de1c5c27b7"})
+        players_hash=JSON.parse(players_string)
+        players_arr = players_hash["squad"]
+        players_arr.each do |player|
+            puts ""
+            puts "Player name: #{player["name"]}"
+            puts "Position: #{player["position"]}"
+            puts "No. #{player["shirtNumber"]}"
+            puts ""
+        end
+    end
     
 end
