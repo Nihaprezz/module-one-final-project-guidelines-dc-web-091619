@@ -63,7 +63,16 @@ class Team < ActiveRecord::Base
     end
 
     def self.fav_team_options(team_name)
-        binding.pry
+        found_id = self.find_team(team_name)
+        found_team = self.find_by(id: found_id)
+        prompt = TTY::Prompt.new
+        selected = prompt.enum_select("Choose what details you would like to see:", "Club Players", "Matches")
+
+        if selected == "Matches"
+            found_team.list_matches
+        elsif selected == "Club Players"
+            found_team.list_players
+        end
     end
     
 end
