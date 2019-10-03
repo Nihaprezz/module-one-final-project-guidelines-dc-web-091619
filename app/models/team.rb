@@ -45,7 +45,7 @@ class Team < ActiveRecord::Base
     end
 
     def players
-        players_string=RestClient.get("https://api.football-data.org/v2/teams/#{self.team_api_id}", {"X-Auth-Token"=> "ebf9f744f51940048af126de1c5c27b7"})
+        players_string=RestClient.get("https://api.football-data.org/v2/teams/#{self.team_api_id}", {"X-Auth-Token"=> "f4350053fbe442b99d59c69baf7630e1"})
         players_hash=JSON.parse(players_string)
         players_arr = players_hash["squad"]
     end
