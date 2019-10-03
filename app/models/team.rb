@@ -10,12 +10,6 @@ class Team < ActiveRecord::Base
         found_team.id 
     end
 
-    def list_players
-        list = Player.where(team_id:self.id)
-        #returns an array of the instances
-        list
-    end
-
     def matches
         week_behind=(Date.today-7).strftime('%Y-%m-%d')
         week_forward=(Date.today+7).strftime('%Y-%m-%d')
@@ -47,9 +41,12 @@ class Team < ActiveRecord::Base
         players_string=RestClient.get("https://api.football-data.org/v2/teams/#{self.team_api_id}", {"X-Auth-Token"=> "ebf9f744f51940048af126de1c5c27b7"})
         players_hash=JSON.parse(players_string)
         players_arr = players_hash["squad"]
+    end
+
+    def list_players
         puts ""
         puts "#{self.name} Players"
-        players_arr.each do |player|
+        self.players.each do |player|
             puts ""
             puts "Player name: #{player["name"]}"
             puts "Position: #{player["position"]}"
