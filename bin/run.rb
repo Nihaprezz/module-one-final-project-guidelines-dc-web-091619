@@ -37,7 +37,10 @@ if @current_user
                 puts "---------------"
                 #will call the the ttyl prompt method in user
                 selected_team = @current_user.print_ttyl_team_list
-                Team.fav_team_options(selected_team)
+                system 'clear'
+                if selected_team != "Menu"
+                    Team.fav_team_options(selected_team)
+                end
                 puts ''
                 puts ''
                 puts ''
