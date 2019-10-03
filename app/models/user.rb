@@ -28,5 +28,14 @@ class User < ActiveRecord::Base
         returned_id=Team.find_team(team_name)
         User_team.where(user_id: self.id).destroy_by(team_id: returned_id)
     end
+
+    def print_ttyl_team_list
+        prompt = TTY::Prompt.new
+        list_text = "Select a Team or Go Back to Menu"
+        fav_teams = self.list_favorite_teams
+
+        prompt.enum_select(list_text, fav_teams.map {|team| team.name}, "Menu")
+
+    end
     
 end

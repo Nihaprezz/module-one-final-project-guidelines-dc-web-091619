@@ -35,7 +35,9 @@ if @current_user
                 puts ''
                 puts "Favorite Teams"
                 puts "---------------"
-                @current_user.print_fav_teams
+                #will call the the ttyl prompt method in user
+                selected_team = @current_user.print_ttyl_team_list
+                Team.fav_team_options(selected_team)
                 puts ''
                 puts ''
                 puts ''

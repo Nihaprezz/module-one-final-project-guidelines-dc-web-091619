@@ -36,8 +36,7 @@ class Team < ActiveRecord::Base
                 puts ""
                 puts "Upcoming Fixtures"
                 puts "-----------------"
-                # puts "#{match["utcDate"].sfrt()}"
-                #This doesnt work.
+                puts "#{match["utcDate"].split('T').shift}"
                 puts "#{match["homeTeam"]["name"]}"
                 puts "#{match["awayTeam"]["name"]}"
                 puts ""
@@ -61,6 +60,10 @@ class Team < ActiveRecord::Base
             puts "No. #{player["shirtNumber"]}"
             puts ""
         end
+    end
+
+    def self.fav_team_options(team_name)
+        binding.pry
     end
     
 end
