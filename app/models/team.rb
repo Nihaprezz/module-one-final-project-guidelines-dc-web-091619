@@ -16,7 +16,10 @@ class Team < ActiveRecord::Base
         match_string=RestClient.get("https://api.football-data.org/v2/teams/#{self.team_api_id}/matches?dateFrom=#{week_behind}&dateTo=#{week_forward}", {"X-Auth-Token"=> "ebf9f744f51940048af126de1c5c27b7"})
         match_hash=JSON.parse(match_string)
         match_array = match_hash["matches"]
-        match_array.each do |match|
+    end
+
+    def list_matches
+        self.matches.each do |match|
             if match["status"] == "FINISHED"
                 puts ""
                 puts "Past Fixtures"
