@@ -30,9 +30,16 @@ def create_user
     #will create or find the user in the DB and return the object
     puts "Enter your username"
     input_username = gets.chomp
- 
-    if input_username.downcase == "exit"
+    if input_username.downcase == "back"
+        user_login
+    elsif User.find_by(name:input_username)
+        puts "Name taken. Please try again. (Input BACK to go back)"
+        puts ""
+        create_user
+    elsif input_username.downcase == "exit"
         puts "Goodbye!"
+    #need to search for username
+        #if username taken, prompt taken make a new one
     elsif 
         user = User.create(name: input_username)
         system "clear"
