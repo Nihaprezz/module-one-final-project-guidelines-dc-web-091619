@@ -66,7 +66,7 @@ class Team < ActiveRecord::Base
         puts "#{self.name} Players"
         self.players.each do |player| 
             puts ""
-            puts "Name: #{player["name"]}"
+            puts "#{player["role"]}: #{player["name"]}"
             puts "Position: #{player["position"]}"
             puts "Age: #{((Date.today-Date.parse(player["dateOfBirth"]))/365).to_i}"
             puts "Nationality: #{player["nationality"]}"
