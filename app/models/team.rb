@@ -64,7 +64,7 @@ class Team < ActiveRecord::Base
     def list_players
         puts ""
         puts "#{self.name} Players"
-        self.players.each do |player|
+        self.players.each do |player| 
             puts ""
             puts "Name: #{player["name"]}"
             puts "Position: #{player["position"]}"
