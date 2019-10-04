@@ -8,10 +8,10 @@ class Team < ActiveRecord::Base
     def self.find_team(team_name)
             found_team=self.all.select{|team|team.name.casecmp(team_name)==0}.first
             
-            if team_name == "exit"
+            if team_name == "back"
                 return
             elsif !found_team
-                puts "Team not found.  Please enter again"
+                puts "Team not found.  Please enter again. (BACK to go back)"
                 team_name = gets.chomp.downcase
                 self.find_team(team_name)
             elsif found_team.is_a?(Object)

@@ -105,7 +105,7 @@ def add_team_interface
     puts "Please enter a team"
     team_search = gets.chomp.downcase #gets turns variable into string
     #deleted downcase to match the team names in TEAM SEARCH. Running into errors with captialization.
-    if team_search == "exit"
+    if team_search == "back"
         return 
     else
         Team.find_team(team_search) #passing in team_search which is a string variable
