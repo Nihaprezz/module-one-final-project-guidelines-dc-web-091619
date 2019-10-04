@@ -47,6 +47,10 @@ if @current_user
             when "add team"
                 new_team_id = add_team_interface
                 @current_user.add_team(new_team_id)
+            when "team rank"
+                puts "Team rankings"
+                puts "-------------"
+                User_team.most_popular_teams
             when "delete team"
                 ##call delete team method
                 puts ''
