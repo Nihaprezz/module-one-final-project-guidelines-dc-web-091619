@@ -64,7 +64,7 @@ class Team < ActiveRecord::Base
     def list_players
         puts ""
         puts "#{self.name} Players"
-        self.players.each do |player|
+        self.players.each do |player| 
             puts ""
             puts "Name: #{player["name"]}"
             puts "Position: #{player["position"]}"
@@ -95,7 +95,7 @@ class Team < ActiveRecord::Base
       stats_object = Stat.find_by(team_api_id: self.team_api_id)
       puts "#{self.name} Team Stats"
       puts "------------------------"
-      puts "Position: #{stats_object.standing} | Wins: #{stats_object.wins} | Draws: #{stats_object.draws} | Goals For: #{stats_object.goals_for} | Goals Against: #{stats_object.goals_against}"
+      puts "Position: #{stats_object.standing} | Wins: #{stats_object.wins} | Draws: #{stats_object.draws} | Losses: #{stats_object.losses} Goals For: #{stats_object.goals_for} | Goals Against: #{stats_object.goals_against}"
       puts "-------------------------"
     end
     
