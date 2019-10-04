@@ -8,7 +8,7 @@ require_relative '../config/environment'
 # end
 
 def create_stat_team_data
-    all_teams_hashes 
+    # all_teams_hashes 
     # <---- calls the API we should only to this once when seeding the data
     
     $Total_arr.each do |team|
@@ -24,8 +24,6 @@ def create_stat_team_data
         )
     end
 end
-
-create_stat_team_data
 
 
 
