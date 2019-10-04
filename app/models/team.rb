@@ -28,7 +28,6 @@ class Team < ActiveRecord::Base
 
     def list_matches
         self.matches.each do |match|
-            binding.pry
             if match["status"] == "FINISHED"
                 puts ""
                 puts "Past Fixtures"
