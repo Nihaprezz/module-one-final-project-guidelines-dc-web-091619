@@ -6,15 +6,16 @@ class Team < ActiveRecord::Base
     has_many :users, through: :user_teams
 
     def self.find_team(team_name)
-            # found_team = self.find_by(name: team_name)
-            if found_team=self.all.select{|team|team.name.casecmp(team_name)==0}.first
-                found_team.id
-            elsif team_name == "exit"
+            found_team=self.all.select{|team|team.name.casecmp(team_name)==0}.first
+            
+            if team_name == "back"
                 return
-            elsif found_team != self.all.select{|team|team.name.casecmp(team_name)==0}.first
-                puts "Team not found.  Please enter again".yellow
+            elsif !found_team
+                puts "Team not found.  Please enter again. (BACK to go back)"
                 team_name = gets.chomp.downcase
                 self.find_team(team_name)
+            elsif found_team.is_a?(Object)
+                found_team.id
             end
 
     end
@@ -66,7 +67,7 @@ class Team < ActiveRecord::Base
         puts "#{self.name} Players"
         self.players.each do |player| 
             puts ""
-            puts "Name: #{player["name"]}"
+            puts "#{player["role"]}: #{player["name"]}"
             puts "Position: #{player["position"]}"
             puts "Age: #{((Date.today-Date.parse(player["dateOfBirth"]))/365).to_i}"
             puts "Nationality: #{player["nationality"]}"
