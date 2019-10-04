@@ -13,7 +13,10 @@ class User_team < ActiveRecord::Base
 
     def self.most_popular_team
         most_pop=self.team_count_hash.max_by{|id,num|num}
-        prints "#{Team.find_by(id:most_pop[0]).name}"
+        puts "---------------------------------------------------"
+        puts "The most popular team is currently : #{Team.find_by(id:most_pop[0]).name.upcase}"
+        puts "---------------------------------------------------"
+        puts ""
     end
 
 end

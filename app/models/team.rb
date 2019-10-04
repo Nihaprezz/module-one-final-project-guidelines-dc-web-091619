@@ -28,7 +28,6 @@ class Team < ActiveRecord::Base
 
     def list_matches
         self.matches.each do |match|
-            binding.pry
             if match["status"] == "FINISHED"
                 puts ""
                 puts "Past Fixtures"
@@ -69,6 +68,9 @@ class Team < ActiveRecord::Base
     def self.fav_team_options(team_name)
         found_id = self.find_team(team_name)
         found_team = self.find_by(id: found_id)
+
+        found_team.show_stats   #will show the stats
+
         prompt = TTY::Prompt.new
         selected = prompt.enum_select("Choose what details you would like to see:", "Club Players", "Matches")
 
@@ -77,6 +79,14 @@ class Team < ActiveRecord::Base
         elsif selected == "Club Players"
             found_team.list_players
         end
+    end
+
+    def show_stats
+      stats_object = Stat.find_by(team_api_id: self.team_api_id)
+      puts "#{self.name} Team Stats"
+      puts "------------------------"
+      puts "Position: #{stats_object.standing} | Wins: #{stats_object.wins} | Draws: #{stats_object.draws} | Goals For: #{stats_object.goals_for}| Goals Against: #{stats_object.goals_against}"
+      puts "-------------------------"
     end
     
 end

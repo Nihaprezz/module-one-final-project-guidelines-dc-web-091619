@@ -56,6 +56,9 @@ if @current_user
                 team_to_delete = gets.chomp  
                 #call the delete method     
                 @current_user.delete_team(team_to_delete)
+            when "popular team"
+                system "clear"
+                User_team.most_popular_team
             when "exit"
                 puts "Goodbye!"
                 break

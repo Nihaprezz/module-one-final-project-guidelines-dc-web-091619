@@ -23,5 +23,4 @@ def all_teams_hashes #only gets teams for 4 leagues
     german_string=RestClient.get("https://api.football-data.org/v2/competitions/2002/standings", {"X-Auth-Token"=> "ebf9f744f51940048af126de1c5c27b7"})
     german_stats=JSON.parse(german_string)['standings'][0]['table']
     $Total_arr = spain_stats + italy_stats + german_stats + england_stats
-    binding.pry
 end

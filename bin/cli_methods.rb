@@ -94,6 +94,7 @@ def show_menu
     puts "LIST TEAMS - will display all of your teams."
     puts "ADD TEAM - will add a team to your favorites."
     puts "DELETE TEAM - will delete a team from your favorites."
+    puts "POPULAR TEAM - will show the most popular team."
     puts "EXIT - will exit the application"
     puts "------------------------------------------------------"
     puts ""
