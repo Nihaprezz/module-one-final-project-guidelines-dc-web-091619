@@ -12,7 +12,7 @@ class Team < ActiveRecord::Base
             elsif team_name == "exit"
                 return
             elsif found_team != self.all.select{|team|team.name.casecmp(team_name)==0}.first
-                puts "Team not found.  Please enter again"
+                puts "Team not found.  Please enter again".yellow
                 team_name = gets.chomp.downcase
                 self.find_team(team_name)
             end
@@ -93,9 +93,9 @@ class Team < ActiveRecord::Base
 
     def show_stats
       stats_object = Stat.find_by(team_api_id: self.team_api_id)
-      puts "#{self.name} Team Stats"
+      puts "#{self.name} Team Stats".red
       puts "------------------------"
-      puts "Position: #{stats_object.standing} | Wins: #{stats_object.wins} | Draws: #{stats_object.draws} | Losses: #{stats_object.losses} Goals For: #{stats_object.goals_for} | Goals Against: #{stats_object.goals_against}"
+      puts "Position: #{stats_object.standing} | Wins: #{stats_object.wins} | Draws: #{stats_object.draws} | Losses: #{stats_object.losses} Goals For: #{stats_object.goals_for} | Goals Against: #{stats_object.goals_against}".red
       puts "-------------------------"
     end
     

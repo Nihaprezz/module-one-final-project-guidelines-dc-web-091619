@@ -7,24 +7,27 @@ require_relative "./cli_methods.rb"
 
 puts "
 
-_______  _______  _______  _______  _______  ______      _______  ___      ___     _______  _______  _______ 
-|       ||       ||       ||       ||       ||    _ |    |       ||   |    |   |   |   _   ||       ||       |
-|  _____||   _   ||       ||       ||    ___||   | ||    |       ||   |    |   |   |  |_|  ||    _  ||    _  |
-| |_____ |  | |  ||       ||       ||   |___ |   |_||_   |       ||   |    |   |   |       ||   |_| ||   |_| |
-|_____  ||  |_|  ||      _||      _||    ___||    __  |  |      _||   |___ |   |   |       ||    ___||    ___|
- _____| ||       ||     |_ |     |_ |   |___ |   |  | |  |     |_ |       ||   |   |   _   ||   |    |   |    
-|_______||_______||_______||_______||_______||___|  |_|  |_______||_______||___|   |__| |__||___|    |___|    
 
-"
+_______  _______  _______  _______  _______  ______      _______  _______  _______ 
+|       ||       ||       ||       ||       ||    _ |    |   _   ||       ||       |
+|  _____||   _   ||       ||       ||    ___||   | ||    |  |_|  ||    _  ||    _  |
+| |_____ |  | |  ||       ||       ||   |___ |   |_||_   |       ||   |_| ||   |_| |
+|_____  ||  |_|  ||      _||      _||    ___||    __  |  |       ||    ___||    ___|
+ _____| ||       ||     |_ |     |_ |   |___ |   |  | |  |   _   ||   |    |   |    
+|_______||_______||_______||_______||_______||___|  |_|  |__| |__||___|    |___|    
+
+(2019 Version.)
+".blue
+
 puts "-------------------------"
-puts "Once logged in type Menu for a list of commands"
+puts "Once logged in type Menu for a list of commands".blue
 
 current_user = user_login
 
 if @current_user
     while true do
         # show_menu
-        puts "What would you like to do? (Type MENU for options)"
+        puts "What would you like to do? (Type MENU for options)".yellow
         choice = gets.chomp.downcase
             case choice
             when "menu"
@@ -64,7 +67,7 @@ if @current_user
                 system "clear"
                 User_team.most_popular_team
             when "exit"
-                puts "Goodbye!"
+                puts "GoodBye! Thank you for using the app!"
                 break
             end
 

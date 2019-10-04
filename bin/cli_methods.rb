@@ -89,14 +89,14 @@ end
 
 def show_menu
     puts ""
-    puts "--------------- Menu of Commands ---------------------"
-    puts "MENU - will display a list of commands."
-    puts "LIST TEAMS - will display all of your teams."
-    puts "ADD TEAM - will add a team to your favorites."
-    puts "DELETE TEAM - will delete a team from your favorites."
-    puts "TEAM RANK - will display the most popular teams."
-    puts "EXIT - will exit the application"
-    puts "------------------------------------------------------"
+    puts "--------------- Menu of Commands ---------------------".yellow
+    puts "MENU - will display a list of commands.".yellow
+    puts "LIST TEAMS - will display all of your teams.".yellow
+    puts "ADD TEAM - will add a team to your favorites.".yellow
+    puts "DELETE TEAM - will delete a team from your favorites.".yellow
+    puts "TEAM RANK - will display the most popular teams.".yellow
+    puts "EXIT - will exit the application".yellow
+    puts "------------------------------------------------------".yellow
     puts ""
 end
 
