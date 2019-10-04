@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
     def delete_team(team_name)
         #find his objects in the user_team table
         returned_id=Team.find_team(team_name)
+        
         User_team.where(user_id: self.id).destroy_by(team_id: returned_id)
     end
 

@@ -6,15 +6,16 @@ class Team < ActiveRecord::Base
     has_many :users, through: :user_teams
 
     def self.find_team(team_name)
-            # found_team = self.find_by(name: team_name)
-            if found_team=self.all.select{|team|team.name.casecmp(team_name)==0}.first
-                found_team.id
-            elsif team_name == "exit"
+            found_team=self.all.select{|team|team.name.casecmp(team_name)==0}.first
+            
+            if team_name == "exit"
                 return
-            elsif found_team != self.all.select{|team|team.name.casecmp(team_name)==0}.first
+            elsif !found_team
                 puts "Team not found.  Please enter again"
                 team_name = gets.chomp.downcase
                 self.find_team(team_name)
+            elsif found_team.is_a?(Object)
+                found_team.id
             end
 
     end
