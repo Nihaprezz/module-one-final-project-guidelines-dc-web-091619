@@ -28,20 +28,23 @@ class Team < ActiveRecord::Base
 
     def list_matches
         self.matches.each do |match|
+            binding.pry
             if match["status"] == "FINISHED"
                 puts ""
                 puts "Past Fixtures"
                 puts "----------"
-                puts "#{match["homeTeam"]["name"]}: #{match["score"]["fullTime"]["homeTeam"]}"
                 puts "#{match["awayTeam"]["name"]}: #{match["score"]["fullTime"]["awayTeam"]}"
+                puts "at"
+                puts "#{match["homeTeam"]["name"]}: #{match["score"]["fullTime"]["homeTeam"]}"
             elsif match["status"] == "SCHEDULED"
                 puts ""
                 puts ""
                 puts "Upcoming Fixtures"
                 puts "-----------------"
                 puts "#{match["utcDate"].split('T').shift}"
-                puts "#{match["homeTeam"]["name"]}"
                 puts "#{match["awayTeam"]["name"]}"
+                puts "at"
+                puts "#{match["homeTeam"]["name"]}"
                 puts ""
             end
         end
